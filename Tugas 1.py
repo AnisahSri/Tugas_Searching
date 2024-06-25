@@ -1,13 +1,13 @@
-def binarySearch(array, x, low, high):
+def binary_search_sayur(sayuran, cari_sayuran, low, high):
 
     while low <= high:
 
         mid = low + (high - low)//2
 
-        if array[mid] == x:
+        if sayuran[mid] == cari_sayuran:
             return mid
 
-        elif array[mid] < x:
+        elif sayuran[mid] < cari_sayuran:
             low = mid + 1
 
         else:
@@ -15,13 +15,17 @@ def binarySearch(array, x, low, high):
 
     return -1
 
+# Daftar sayuran yang sudah diurutkan
+sayuran = ["Bawang", "Bayam", "Brokoli", "Jagung", "Kangkung", "Kentang", "Kubis", "Lobak", "Sawi", "Selada", "Tomat"]
 
-array = [3, 4, 5, 6, 7, 8, 9]
-x = 10
+# Nama sayuran yang ingin dicari
+cari_sayuran = "Cabai"
 
-result = binarySearch(array, x, 0, len(array)-1)
+# Melakukan pencarian
+hasil = binary_search_sayur(sayuran, cari_sayuran, 0, len(sayuran)-1)
 
-if result != -1:
-    print("Elemen ditemukan pada indeks " + str(result))
+# Menampilkan hasil
+if hasil != -1:
+    print(f"Sayuran '{cari_sayuran}' ditemukan di indeks {hasil}.")
 else:
-    print("Elemen tidak ditemukan dalam daftar")
+    print(f"Sayuran '{cari_sayuran}' tidak ditemukan dalam daftar.")
